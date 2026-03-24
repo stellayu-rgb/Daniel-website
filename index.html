@@ -97,12 +97,12 @@
   /* WORKFLOW CAPTURE FLOW */
   #workflow {background:var(--black); overflow:hidden; text-align:center;}
   .flow-wrapper {display:flex; align-items:center; justify-content:center; gap:2rem; margin-top:4rem; max-width:900px; margin-left:auto; margin-right:auto; text-align:left;}
-  .flow-col {flex:1; display:flex; flex-direction:column; gap:1rem; position:relative; min-width:260px;}
+  .flow-col {flex:1; display:flex; flex-direction:column; gap:1.5rem; position:relative; min-width:300px;}
   .flow-chat {background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:12px 12px 12px 2px; padding:1rem; width:85%; animation:fadeInOut 4s infinite;}
   .flow-chat.delay {border-radius:12px 12px 2px 12px; align-self:flex-end; background:rgba(212,175,55,0.05); border-color:rgba(212,175,55,0.2); animation-delay:1s;}
-  .chat-line {height:6px; background:var(--gray); border-radius:3px; margin-bottom:8px; opacity:0.5;}
-  .chat-line.short {width:60%;}
-  .chat-line.gold {background:var(--gold);}
+  .chat-text{font-size:0.85rem; color:var(--white); line-height:1.6;}
+  .chat-text.gold{color:var(--gold);}
+  
   .flow-center {width:80px; height:2px; background:rgba(212,175,55,0.2); position:relative;}
   .flow-center::after {content:''; position:absolute; top:-1.5px; left:0; width:20px; height:5px; background:var(--gold); box-shadow:0 0 12px var(--gold); border-radius:3px; animation:dataFlow 2.5s ease-in-out infinite;}
   .flow-voucher {background:var(--navy); border:1px solid rgba(212,175,55,0.5); border-radius:8px; padding:1.5rem; position:relative; box-shadow:0 10px 30px rgba(10,25,47,0.8); animation:floatVoucher 4s ease-in-out infinite;}
@@ -365,13 +365,15 @@
   <div class="flow-wrapper fade">
     <div class="flow-col">
       <div class="flow-chat">
-        <div style="font-size:0.65rem; color:var(--gray); margin-bottom:5px;">LINE · 销售总监</div>
-        <div class="chat-line"></div>
-        <div class="chat-line short"></div>
+        <div style="font-size:0.65rem; color:var(--gray); margin-bottom:5px;">LINE · 营业部长</div>
+        <div class="chat-text">今夜、東京本社のクライアントとの接待があります。</div>
+        <div class="chat-text">予算は13万円で見積もっています。承認をお願いします。</div>
+        <div class="chat-text">領収書は後ほど送ります。</div>
       </div>
       <div class="flow-chat delay">
         <div style="font-size:0.65rem; color:var(--gold); margin-bottom:5px; text-align:right;">你</div>
-        <div class="chat-line gold" style="margin-left:auto;"></div>
+        <div class="chat-text gold" style="text-align:right;">承認します。</div>
+        <div class="chat-text gold" style="text-align:right;">12万5千円以内に収めてください。領収書はDanielに送ってください。</div>
       </div>
     </div>
     
@@ -385,7 +387,7 @@
         </div>
         <div class="voucher-row"><span>Subject:</span><span style="color:var(--white);">Client Entertainment</span></div>
         <div class="voucher-row"><span>Amount:</span><span style="color:var(--gold);">¥125,000</span></div>
-        <div class="voucher-row"><span>Evidence:</span><span>Line Chat Attached [cite: 5]</span></div>
+        <div class="voucher-row"><span>Evidence:</span><span>Line Chat Log Attached</span></div>
       </div>
     </div>
   </div>
