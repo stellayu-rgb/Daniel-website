@@ -53,30 +53,39 @@
 
   /* TRUST */
   #trust{background:var(--navy);text-align:center;}
-  .trust-sub{color:var(--gray);font-size:1.05rem;max-width:500px;margin:0 auto 4rem;}
+  .trust-sub{color:var(--gray);font-size:1.05rem;max-width:500px;margin:0 auto 4rem;line-height:1.7;}
   .stats{display:flex;justify-content:center;gap:4rem;flex-wrap:wrap;margin-bottom:3rem;}
   .stat-num{font-size:clamp(2.5rem,5vw,4rem);font-weight:700;color:var(--gold);}
   .stat-label{font-size:.8rem;color:var(--gray);letter-spacing:1px;margin-top:.3rem;}
   .certs{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;}
   .cert{font-size:.72rem;color:var(--gray);letter-spacing:1.5px;padding:.4rem 1rem;border:1px solid rgba(212,175,55,0.2);border-radius:2px;}
 
+  /* KNOWLEDGE BASE MARQUEE */
+  #knowledge {background:var(--black); padding:6rem 0; overflow:hidden;}
+  .marquee-container {display:flex; width:200vw; animation:scroll 40s linear infinite; margin-top:3rem;}
+  .marquee-track {display:flex; gap:2rem; padding:0 1rem;}
+  .k-tag {background:rgba(10,25,47,0.6); border:1px solid rgba(212,175,55,0.15); padding:.8rem 1.5rem; border-radius:30px; font-size:.85rem; color:var(--gray); white-space:nowrap; transition:0.3s;}
+  .k-tag:hover {border-color:var(--gold); color:var(--gold); transform:scale(1.05); background:rgba(212,175,55,0.05);}
+  .k-tag strong {color:var(--white); font-weight:normal;}
+  @keyframes scroll { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
+
   /* MOMENTS */
-  #moments{background:var(--black);}
+  #moments{background:var(--navy);}
   .moments-grid{display:flex;flex-direction:column;gap:1.5rem;max-width:720px;}
-  .moment{border-left:2px solid rgba(212,175,55,0.3);padding:1.5rem 2rem;background:rgba(10,25,47,0.4);border-radius:0 8px 8px 0;transition:.3s;}
-  .moment:hover{border-left-color:var(--gold);background:rgba(10,25,47,0.7);}
+  .moment{border-left:2px solid rgba(212,175,55,0.3);padding:1.5rem 2rem;background:rgba(6,13,24,0.4);border-radius:0 8px 8px 0;transition:.3s;}
+  .moment:hover{border-left-color:var(--gold);background:rgba(6,13,24,0.7);}
   .moment-num{font-size:.7rem;color:var(--gold);letter-spacing:2px;margin-bottom:.5rem;}
   .moment p{font-size:1.05rem;line-height:1.8;color:var(--white);}
 
   /* WHO IS DANIEL */
-  #who{background:var(--navy);}
+  #who{background:var(--black);}
   .who-core{font-size:clamp(1.4rem,3vw,2rem);color:var(--gold);margin-bottom:3rem;font-style:italic;}
   .promises-list{display:flex;flex-direction:column;gap:1.2rem;max-width:640px;}
   .promise-item{display:flex;gap:1rem;align-items:flex-start;font-size:1rem;color:var(--gray);line-height:1.7;}
   .promise-item::before{content:"—";color:var(--gold);flex-shrink:0;margin-top:.1rem;}
 
   /* FOUR PROMISES */
-  #four{background:var(--black);}
+  #four{background:var(--navy);}
   .four-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:3rem;}
   .four-card{background:var(--card);border:1px solid rgba(212,175,55,0.1);border-radius:8px;padding:2rem;transition:.3s;}
   .four-card:hover{border-color:rgba(212,175,55,0.4);transform:translateY(-4px);}
@@ -84,6 +93,27 @@
   .four-title{font-size:1rem;font-weight:700;margin-bottom:.8rem;}
   .four-body{font-size:.85rem;color:var(--gray);line-height:1.7;margin-bottom:1rem;}
   .four-proof{font-size:.78rem;color:rgba(212,175,55,0.7);font-style:italic;padding-top:.8rem;border-top:1px solid rgba(212,175,55,0.1);}
+
+  /* WORKFLOW CAPTURE FLOW */
+  #workflow {background:var(--black); overflow:hidden; text-align:center;}
+  .flow-wrapper {display:flex; align-items:center; justify-content:center; gap:2rem; margin-top:4rem; max-width:900px; margin-left:auto; margin-right:auto; text-align:left;}
+  .flow-col {flex:1; display:flex; flex-direction:column; gap:1rem; position:relative; min-width:260px;}
+  .flow-chat {background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.1); border-radius:12px 12px 12px 2px; padding:1rem; width:85%; animation:fadeInOut 4s infinite;}
+  .flow-chat.delay {border-radius:12px 12px 2px 12px; align-self:flex-end; background:rgba(212,175,55,0.05); border-color:rgba(212,175,55,0.2); animation-delay:1s;}
+  .chat-line {height:6px; background:var(--gray); border-radius:3px; margin-bottom:8px; opacity:0.5;}
+  .chat-line.short {width:60%;}
+  .chat-line.gold {background:var(--gold);}
+  .flow-center {width:80px; height:2px; background:rgba(212,175,55,0.2); position:relative;}
+  .flow-center::after {content:''; position:absolute; top:-1.5px; left:0; width:20px; height:5px; background:var(--gold); box-shadow:0 0 12px var(--gold); border-radius:3px; animation:dataFlow 2.5s ease-in-out infinite;}
+  .flow-voucher {background:var(--navy); border:1px solid rgba(212,175,55,0.5); border-radius:8px; padding:1.5rem; position:relative; box-shadow:0 10px 30px rgba(10,25,47,0.8); animation:floatVoucher 4s ease-in-out infinite;}
+  .voucher-head {display:flex; justify-content:space-between; margin-bottom:1rem; border-bottom:1px solid rgba(212,175,55,0.2); padding-bottom:.5rem;}
+  .voucher-title {font-size:.75rem; color:var(--gold); letter-spacing:2px; font-weight:bold;}
+  .voucher-stamp {border:1px solid #4caf80; color:#4caf80; font-size:.6rem; padding:.1rem .4rem; border-radius:2px; transform:rotate(-5deg); letter-spacing:1px;}
+  .voucher-row {display:flex; justify-content:space-between; font-size:.8rem; color:var(--gray); margin-bottom:.6rem;}
+  
+  @keyframes fadeInOut { 0%,100%{opacity:0.3; transform:translateY(5px);} 50%{opacity:1; transform:translateY(0);} }
+  @keyframes dataFlow { 0%{left:0; opacity:0;} 50%{opacity:1;} 100%{left:100%; opacity:0;} }
+  @keyframes floatVoucher { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px); box-shadow:0 15px 40px rgba(212,175,55,0.15);} }
 
   /* MORNING */
   #morning{background:var(--navy);}
@@ -160,12 +190,17 @@
     .hero-sub{margin:0 auto 2.5rem;}
     .divider{margin-left:auto;margin-right:auto;}
     #chat-window{width:calc(100vw - 2rem);right:1rem;}
+    
+    /* 移动端降级处理：垂直堆叠，避免动画错位 */
+    .flow-wrapper {flex-direction:column; gap:1.5rem;}
+    .flow-center {width:2px; height:60px;}
+    @keyframes dataFlow { 0%{top:0; opacity:0;} 50%{opacity:1;} 100%{top:100%; opacity:0;} }
+    .flow-center::after {width:5px; height:20px; left:-1.5px; animation:dataFlow 2.5s ease-in-out infinite;}
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="logo">DANIEL</div>
   <div class="nav-links">
@@ -176,7 +211,6 @@
   <a href="#finalcta" class="nav-cta">开始</a>
 </nav>
 
-<!-- HERO -->
 <section id="hero" style="display:flex;flex-wrap:wrap;">
   <div class="hero-left fade">
     <div class="hero-tag">日韩企业出海的财务大脑</div>
@@ -203,7 +237,6 @@
   </div>
 </section>
 
-<!-- TRUST -->
 <section id="trust">
   <div class="fade">
     <div class="section-tag">信任的重量</div>
@@ -224,15 +257,35 @@
       <div class="stat-label">风险预警准确率<br>比政策公开早 72 小时</div>
     </div>
   </div>
-    <div class="certs fade">
-    <div class="cert">美国 GAAP 合规</div>
-    <div class="cert">欧盟 VAT 标准</div>
-    <div class="cert">东南亚 GST 集成</div>
-    <div class="cert">跨境电商税务认证</div>
+</section>
+
+<section id="knowledge" style="padding-left:0; padding-right:0;">
+  <div class="fade" style="text-align:center; padding:0 6vw;">
+    <div class="section-tag">他的底气</div>
+    <h2 class="section-h2">不是背诵法条，<br>是知道红线在哪。</h2>
+    <p class="trust-sub">通过深度学习跨境贸易中的“非标风险点”，他构建了一个动态更新的行业合规库。<br>他清楚什么时候该严，什么时候可以变通处理 [cite: 3]。</p>
+  </div>
+  
+  <div class="marquee-container fade">
+    <div class="marquee-track">
+      <div class="k-tag">🇺🇸 <strong>US GAAP</strong> 收入确认原则</div>
+      <div class="k-tag">🇯🇵 <strong>JCT (日本消费税)</strong> 发票合规抵扣</div>
+      <div class="k-tag">🇪🇺 <strong>EU VAT</strong> OSS 申报逻辑</div>
+      <div class="k-tag">🇰🇷 <strong>韩国附加税</strong> 电子税单追踪</div>
+      <div class="k-tag">🇸🇬 <strong>新加坡 GST</strong> 豁免条款</div>
+      <div class="k-tag">🔒 <strong>汇率套保</strong> 风险敞口监测</div>
+    </div>
+    <div class="marquee-track">
+      <div class="k-tag">🇺🇸 <strong>US GAAP</strong> 收入确认原则</div>
+      <div class="k-tag">🇯🇵 <strong>JCT (日本消费税)</strong> 发票合规抵扣</div>
+      <div class="k-tag">🇪🇺 <strong>EU VAT</strong> OSS 申报逻辑</div>
+      <div class="k-tag">🇰🇷 <strong>韩国附加税</strong> 电子税单追踪</div>
+      <div class="k-tag">🇸🇬 <strong>新加坡 GST</strong> 豁免条款</div>
+      <div class="k-tag">🔒 <strong>汇率套保</strong> 风险敞口监测</div>
+    </div>
   </div>
 </section>
 
-<!-- MOMENTS -->
 <section id="moments">
   <div class="fade">
     <div class="section-tag">三个瞬间</div>
@@ -242,20 +295,19 @@
   <div class="moments-grid">
     <div class="moment fade">
       <div class="moment-num">01</div>
-      <p>目标国的税务局发来一份密密麻麻的通知函。你的当地会计说"没问题"，但你根本不知道他说的是不是实话。</p>
+      <p>目标国的税务局发来一份密密麻麻的通知函。大部分老板看不懂外语，当地会计说什么只能信什么。</p>
     </div>
     <div class="moment fade">
       <div class="moment-num">02</div>
-      <p>海外子公司的财务规则悄悄变了。没有人主动告诉你。三个月后，你在一张罚款账单上第一次知道这件事。</p>
+      <p>财务习惯于遵守和执行制度，不会主动提醒老板风险，更不会为老板的利益出谋划策。</p>
     </div>
     <div class="moment fade">
       <div class="moment-num">03</div>
-      <p>那个掌握你海外所有账目秘密的人，今天递了辞职信。你突然发现，江山的钥匙一直攥在别人手里。</p>
+      <p>那个掌握你海外所有账目秘密的人，今天递了辞职信。在海外很难找到懂行又忠诚的自己人，当地员工一旦离职意味着致命威胁。</p>
     </div>
   </div>
 </section>
 
-<!-- WHO IS DANIEL -->
 <section id="who">
   <div class="fade">
     <div class="section-tag">他是谁</div>
@@ -263,13 +315,12 @@
     <div class="divider"></div>
   </div>
   <div class="promises-list fade">
-    <div class="promise-item">他不会离职，不会叛变，更不会带走你的账本。</div>
+    <div class="promise-item">他是一个会迭代进化、经验丰富的财务老员工，他不会离职，更不会带走你的秘密。</div>
     <div class="promise-item">他不是在告诉你"没问题"，他是那个发现问题、第一时间找你的人。</div>
     <div class="promise-item">他不需要你管；他只在关键时刻打扰你。</div>
   </div>
 </section>
 
-<!-- FOUR PROMISES -->
 <section id="four">
   <div class="fade">
     <div class="section-tag">四个承诺</div>
@@ -285,8 +336,8 @@
     </div>
     <div class="four-card fade">
       <div class="four-num">02</div>
-      <div class="four-title">越用越像你自己</div>
-      <div class="four-body">他会记住你的每一项审批偏好。</div>
+      <div class="four-title">深度定制化与学习</div>
+      <div class="four-body">Agent 会深度学习该企业特有的账务处理惯例、避税策略偏好，甚至能克隆领导对财务开支的审批逻辑。</div>
       <div class="four-proof">进入第二年，他能自主处理 80% 的日常报销审批，决策逻辑与你完全一致。</div>
     </div>
     <div class="four-card fade">
@@ -297,14 +348,49 @@
     </div>
     <div class="four-card fade">
       <div class="four-num">04</div>
-      <div class="four-title">你只需要每天看一眼</div>
-      <div class="four-body">他处理一切杂事，只把决策权留给你。</div>
+      <div class="four-title">主动值班追踪</div>
+      <div class="four-body">Daniel 不等指令，24小时监听所有信息渠道，事情发生时自主完成处理。</div>
       <div class="four-proof">每天早上 6:00，你只需点开日报，点一下"确认"，今天的工作就结束了。</div>
     </div>
   </div>
 </section>
 
-<!-- MORNING -->
+<section id="workflow">
+  <div class="fade" style="text-align:center;">
+    <div class="section-tag">无感捕获</div>
+    <h2 class="section-h2">散落的对话，<br>他眼中的账本。</h2>
+    <p class="trust-sub" style="margin:0 auto;">他实时捕获你在 LINE / Slack 里的交互，自动结构化为财务解释附件。<br>你只需专注谈生意，剩下的交给他。</p>
+  </div>
+  
+  <div class="flow-wrapper fade">
+    <div class="flow-col">
+      <div class="flow-chat">
+        <div style="font-size:0.65rem; color:var(--gray); margin-bottom:5px;">LINE · 销售总监</div>
+        <div class="chat-line"></div>
+        <div class="chat-line short"></div>
+      </div>
+      <div class="flow-chat delay">
+        <div style="font-size:0.65rem; color:var(--gold); margin-bottom:5px; text-align:right;">你</div>
+        <div class="chat-line gold" style="margin-left:auto;"></div>
+      </div>
+    </div>
+    
+    <div class="flow-center"></div>
+    
+    <div class="flow-col">
+      <div class="flow-voucher">
+        <div class="voucher-head">
+          <div class="voucher-title">GAAP VOUCHER</div>
+          <div class="voucher-stamp">COMPLIANT</div>
+        </div>
+        <div class="voucher-row"><span>Subject:</span><span style="color:var(--white);">Client Entertainment</span></div>
+        <div class="voucher-row"><span>Amount:</span><span style="color:var(--gold);">¥125,000</span></div>
+        <div class="voucher-row"><span>Evidence:</span><span>Line Chat Attached [cite: 5]</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="morning">
   <div class="fade">
     <div class="section-tag">一个真实的早晨</div>
@@ -316,7 +402,7 @@
       <div class="tl-time">23:32</div>
       <div class="tl-dot" style="margin-top:.4rem;"></div>
       <div class="tl-content">
-        <div class="tl-action">日本供应商发来发票。Daniel 自动识别、翻译、核对。</div>
+        <div class="tl-action">日本供应商发来发票。Daniel 自主核对到账、生成凭证。</div>
         <div class="tl-you">你在睡觉。</div>
       </div>
     </div>
@@ -324,7 +410,7 @@
       <div class="tl-time">00:16</div>
       <div class="tl-dot" style="margin-top:.4rem;"></div>
       <div class="tl-content">
-        <div class="tl-action">自动生成凭证，归档附件，标记"建议付款"。</div>
+        <div class="tl-action">归档附件，标记风险，准备简报。</div>
         <div class="tl-you">你在睡觉。</div>
       </div>
     </div>
@@ -332,18 +418,17 @@
       <div class="tl-time">06:00</div>
       <div class="tl-dot" style="background:#4caf80;margin-top:.4rem;"></div>
       <div class="tl-content">
-        <div class="tl-action">推送简报。你醒来点了一下屏幕，搞定。</div>
+        <div class="tl-action">人只需要看一眼日报"今天发生了什么、有哪两件事需要拍板"。你醒来点一下屏幕，搞定。</div>
         <div class="tl-you" style="color:#4caf80;">你不再焦虑。</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ONE MORE THING -->
 <section id="omt">
   <div class="omt-bg"></div>
   <div class="omt-big fade">"用得越久，<br>他越不打扰你。"</div>
-  <p class="omt-sub fade">大部分产品越用越依赖你。Daniel 反过来。<br>随着信任的积累，他自主处理的范围会越来越大。这才是一个好员工，应该有的样子。</p>
+  <p class="omt-sub fade">大部分产品越用越依赖你。Daniel 反过来。<br>随着信任的积累，需要人工介入的事项会越来越少，Daniel 承担的自主决策范围会越来越大。这才是一个好员工应该有的样子。</p>
   <div class="omt-years fade">
     <div class="omt-year">
       <div class="omt-year-num">20×</div>
@@ -352,17 +437,16 @@
     <div style="color:var(--gold);font-size:1.5rem;padding-top:.5rem;">→</div>
     <div class="omt-year">
       <div class="omt-year-num">5×</div>
-      <div class="omt-year-label">第二年 · 每周问你</div>
+      <div class="omt-year-label">第二年 · 每周复盘</div>
     </div>
     <div style="color:var(--gold);font-size:1.5rem;padding-top:.5rem;">→</div>
     <div class="omt-year">
       <div class="omt-year-num">3×</div>
-      <div class="omt-year-label">第三年 · 每月找你</div>
+      <div class="omt-year-label">第三年 · 每月汇报</div>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
 <section id="pricing">
   <div class="fade">
     <div class="section-tag">守护者方案</div>
@@ -379,7 +463,6 @@
   </div>
 </section>
 
-<!-- FINAL CTA -->
 <section id="finalcta">
   <div class="final-h2 fade">你不需要全懂。<br>你只需要有一个<span>全懂的人</span>，<br>永远站在你这边。</div>
   <div class="fade" style="margin-bottom:1.5rem;">
@@ -394,13 +477,11 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div style="color:var(--gold);font-size:1rem;font-weight:700;letter-spacing:3px;margin-bottom:.8rem;">DANIEL</div>
-  <div>日韩企业出海的守护者 · © 2025 Daniel AI Finance · 所有权利保留</div>
+  <div>日韩企业出海的守护者 · © 2026 Daniel AI Finance · 所有权利保留</div>
 </footer>
 
-<!-- CHATBOT -->
 <button id="chat-toggle" onclick="toggleChat()" title="和 Daniel 对话">💬</button>
 <div id="chat-window">
   <div class="chat-header">
